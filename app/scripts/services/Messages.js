@@ -8,6 +8,8 @@
       all: messages,
       getByRoomId: function(roomId) {
         return $firebaseArray(ref.orderByChild("roomId").equalTo(roomId));
+
+        
       }
     };
 
