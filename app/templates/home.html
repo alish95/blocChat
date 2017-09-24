@@ -1,8 +1,21 @@
-<div class="home-page">
-  <div class="home-name">blocChat</div>
-  <h4>Chat with anyone you want and about anything.</h4>
-  <br><br>
-  <h6>Click below to see the available rooms</h6>
-  <br>
-  <a ui-sref="rooms" class="btn btn-info">chat rooms</a>
-</div>
+<section class="chat-rooms">
+    <div class="chat-rooms-head">
+        <h1>Bloc Chat</h1>
+        <button type="button" ng-click="home.open()">New Room</button>
+        <p ng-repeat='room in home.rooms' ng-click="home.setCurrentRoom(room)">{{room.name}}</p>
+    </div>
+</section>
+<section class="chat-messages">
+    <h3>{{ home.currentRoom.name }}</h3>
+    <table class="chat-messages-body" ng-repeat="message in home.currentMessages">
+        <tr>
+          <td>{{message.username}}</td>
+          <td>({{message.sentAt | date : "medium" : "PST"}}):</td>
+          <td>{{message.content}}</td>
+        </tr>
+    </table>
+    <div>
+      <input type="text" ng-model="message.content" style="width: 500px;">
+      <button ng-click="home.sendMessage(message)">Submit Message</button>
+    </div>
+</section>

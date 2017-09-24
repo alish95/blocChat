@@ -1,20 +1,19 @@
 (function() {
-  function ModalCtrl($scope, Room, $uibModalInstance) {
+     function ModalCtrl($scope, Room, $uibModalInstance) {
+         var ctrl = this;
 
-    $scope.create = function() {
-      console.log('YAY! created new room');
-      Room.addRoom($scope.newRoom);
-      $uibModalInstance.close();
-    };
+         ctrl.addRoom = function(){
+             console.log(ctrl.newRoom);
+             Room.add(ctrl.newRoom);
+             $uibModalInstance.close();
+         }
+         ctrl.cancel = function(){
+             $uibModalInstance.dismiss('cancel');
+         }
 
-    $scope.cancel = function() {
-      console.log('cancelled creating room');
-      $uibModalInstance.dismiss('cancel');
-    };
+     }
 
-  };
-
-  angular
-    .module('blocChat')
-    .controller('ModalCtrl', ['$scope', 'Room', '$uibModalInstance', ModalCtrl]);
+     angular
+         .module('blocChat')
+         .controller('ModalCtrl', ['$scope','Room', '$uibModalInstance', ModalCtrl]);
 })();

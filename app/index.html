@@ -5,7 +5,7 @@
     <title>Bloc Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/normalize.css">
+    
 
     <!-- Minified Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -15,24 +15,14 @@
 
     <ui-view></ui-view>
 
-    <!-- Angular -->
+    <!-- Vendor Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-
-    <!-- UI-Router -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
-
-    <!-- Angular UI Bootstrap & templates -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.5/ui-bootstrap-tpls.js"></script>
-
-    <!-- Angular Cookies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
-
-    <!-- AngularFire -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.1.0/angularfire.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
@@ -46,14 +36,13 @@
       firebase.initializeApp(config);
     </script>
 
+
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script src="/scripts/controllers/ModalCtrl.js"></script>
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/services/Messages.js"></script>
     <script src="/scripts/services/BlocChatCookies.js"></script>
-    <script src="/scripts/controllers/HomeCtrl.js"></script>
-    <script src="/scripts/controllers/RoomsCtrl.js"></script>
-    <script src="/scripts/controllers/RoomModalCtrl.js"></script>
-    <script src="/scripts/controllers/UsernameModalCtrl.js"></script>
 
 
   </body>
