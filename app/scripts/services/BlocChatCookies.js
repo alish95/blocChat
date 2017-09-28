@@ -1,27 +1,18 @@
 (function() {
-  function blocChatCookies($cookies, $uibModal) {
-    var currentUser = $cookies.get('blocChatCurrentUser');
-    if (!currentUser || currentUser === '') {
-      $uibModal.open({
-        templateUrl: '/templates/prompt.html',
-        controller: function($scope, $cookies, $uibModalInstance){
-             $scope.setUserName = function(currentUser) {
-                if (currentUser && currentUser !== '') {
-                    console.log(currentUser);
-                    $cookies.put('blocChatCurrentUser', currentUser);
-                    $uibModalInstance.close();
-                } else {
-                    alert("Invalid Username");
-                }
-            };
-        },
-        size: 'sm',
-        backdrop: 'static'
-      });
-    }
-  }
+    function BlocChatCookies($cookies, $uibModal) {
+        var currentUser = $cookies.get('blocChatCurrentUser');
+        if (!currentUser || currentUser === '') {
+            $uibModal.open({
+                templateUrl: '/templates/usernameModal.html',
+                controller: 'UsernameCtrl as user',
+                size: 'sm',
+                keyboard: false,
+                backdrop: 'static'
+            });
+        }
+    };
 
-  angular
-    .module('blocChat')
-    .run(['$cookies', '$uibModal', blocChatCookies]);
+    angular
+        .module('blocChat')
+        .run(['$cookies', '$uibModal', BlocChatCookies]);
 })();

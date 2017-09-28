@@ -1,9 +1,8 @@
-<div id="custom-modal">
-  <div id="overlay">
-      <h3>Create new room</h3>
-      <h5>Enter a room name</h5>
-      <input type="text" ng-model="modal.newRoom.name">
-      <button type="button" ng-click="modal.addRoom()">Create Room</button>
-      <button type="button" ng-click="modal.cancel()">Cancel</button>
-  </div>
+<div class="modal">
+    <h1 class="modal-h1">Create A Room</h1><br>
+    <form>
+        <input required class="modal-input-bar" type="text" name="input" placeholder="type room name here" ng-model="roomName" ng-submit="roomName"></input><br>
+        <a class="btn1" ng-click="create()">Create room</a>
+        <a class="modal-btn1" ng-click="cancel()">Cancel</a>
+    </form><br>
 </div>
